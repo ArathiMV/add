@@ -1,0 +1,106 @@
+version: '3.1'
+intents:
+
+- affirm
+- bot_challenge
+- cultivation
+- days
+- deny
+- fertilizers
+- goodbye
+- greet
+- interval_fertilizer
+- irrigation_method
+- irrigation_source
+- labour_cost
+- labour_count
+- mood_great
+- mood_unhappy
+- planting
+- seed_variety
+- seed_weight
+- seeding
+- seedsfrom
+- sowing
+- total_cost
+- makeit
+- buy_it
+- kandam
+responses:
+  utter_greet:
+  - text: Hey! What is your current crop stage?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_cultivation:
+  - text: Is your land ready for cultivation?
+  utter_goodbye:
+  - text: Bye
+  utter_no:
+  - text: what you done today?
+  utter_yes:
+  - text: what is the seed variety?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_variety:
+  - text: which irrigation method are you using?
+  utter_method:
+  - text: which irrigation source are you using?
+  utter_source:
+  - text: what is the total cost of irrigation?
+  utter_planting_sowing:
+  - text: 'What do you prefer:'
+    buttons:
+    - title: planting
+      payload: /planting
+    - title: sowing
+      payload: /sowing
+  utter_sowing:
+  - text: where did you buy the seeds?
+  utter_days:
+  - text: After how many days fertilizers should be used?
+  utter_fertilizer:
+  - text: Which all fertilizers should be used?
+  utter_interval_fertilizer:
+  - text: What is the interval between applying fertilizers(in days)?
+  utter_seed_weight:
+  - text: What is the weight of the seed(in kg)?
+  utter_seeding:
+  - text: What is the method of seeding?
+  utter_labour_count_men:
+  - text: What is the number of  men labours?
+  utter_labour_count_women:
+  - text: What is the number of  women labours?
+  utter_labour_cost_men:
+  - text: What is the labour cost for  men labours?
+  utter_labour_cost_women:
+  - text: What is the labour cost for women labours?
+  utter_seed_cost:
+  - text: What is the cost of the seed(per kg)?
+
+  utter_planting:
+    - text: "what is your choice:"
+      buttons:
+      - title: makesit
+        payload: "/makeit"
+      - title: buyit
+        payload: "/buy_it"
+  utter_sprout:
+  - text: Did you put the seed to sprout?
+  utter_kandam:
+  - text: Fields of which did the seed put to sprout?
+  utter_total_cost:
+  - text: What is the total cost?
+  utter_days_complete:
+  - text: how many days required to complete?
+  utter_outside_threshold_prompt:
+  - text: The entered value is outside the desired threshold. Please add a value within the range.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_greet
